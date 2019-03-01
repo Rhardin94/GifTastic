@@ -15,7 +15,7 @@ function actorButtons() {
 		//Appends each button to the buttons div
 		$("#buttons").append(aBtn);
 	}
-}
+}/*
 //Function that adds a new actor after user types name and hits submit
 $("#add-actor").on("click", function(event) {
 	//Prevents form from refreshing the page and submitting data to nowhere
@@ -26,7 +26,7 @@ $("#add-actor").on("click", function(event) {
 	topics.push(newActor);
 	//Calls actorButtons function to update new button and so exisiting buttons are not added again
 	actorButtons();
-})
+})*/
 actorButtons();
 //On-click event that fires the ajax request
 $("button").on("click", function () {
@@ -72,6 +72,7 @@ $("button").on("click", function () {
 $(".gif").on("click", function() {
 	//Assigns state variable to the value of data-state attribute
 	let state = $(this).attr("data-state");
+	console.log(state);
 	//If statement that determines if gif is in still state
 	if (state === "still") {
 		//Changes the source of each image tag from still to animated
