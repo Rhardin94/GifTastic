@@ -15,21 +15,10 @@ function actorButtons() {
 		//Appends each button to the buttons div
 		$("#buttons").append(aBtn);
 	}
-}/*
-//Function that adds a new actor after user types name and hits submit
-$("#add-actor").on("click", function(event) {
-	//Prevents form from refreshing the page and submitting data to nowhere
-	event.preventDefault();
-	//Captures the new actor value that user typed into box
-	let newActor = $("#actor-input").val().trim();
-	//Pushes the new actor into the topics array
-	topics.push(newActor);
-	//Calls actorButtons function to update new button and so exisiting buttons are not added again
-	actorButtons();
-})*/
+}
 actorButtons();
 //On-click event that fires the ajax request
-$("button").on("click", function () {
+$(".actor").on("click", function () {
 	//Assigning actor variable to the data-name attribute of each button
 	let actor = $(this).attr("data-name");
 	//queryURL used for ajax request
@@ -67,6 +56,17 @@ $("button").on("click", function () {
 			$("#gifs").prepend(gifDiv);
 		}
 	})
+})
+//Function that adds a new actor after user types name and hits submit
+$("#add-actor").on("click", function(event) {
+	//Prevents form from refreshing the page and submitting data to nowhere
+	event.preventDefault();
+	//Captures the new actor value that user typed into box
+	let newActor = $("#actor-input").val().trim();
+	//Pushes the new actor into the topics array
+	topics.push(newActor);
+	//Calls actorButtons function to update new button and so exisiting buttons are not added again
+	actorButtons();
 })
 //on-click event that lets user play and pause gif at will
 $(".gif").on("click", function() {
