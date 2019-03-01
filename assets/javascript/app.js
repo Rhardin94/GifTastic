@@ -70,5 +70,18 @@ $("button").on("click", function () {
 })
 //on-click event that lets user play and pause gif at will
 $(".gif").on("click", function() {
-
+	//Assigns state variable to the value of data-state attribute
+	let state = $(this).attr("data-state");
+	//If statement that determines if gif is in still state
+	if (state === "still") {
+		//Changes the source of each image tag from still to animated
+		$(this).attr("src", $(this).attr("data-animate"));
+		//Changes data-state attribute from still to animate
+		$(this).attr("data-state", "animate");
+	} else {
+		//Returns source of each image to still state
+		$(this).attr("src", $(this).attr("data-still"));
+		//Returns data-state attribute to still
+		$(this).attr("data-state", "still");
+	}
 })
