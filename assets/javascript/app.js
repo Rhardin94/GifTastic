@@ -1,5 +1,5 @@
 //Array of actors to create the starter buttons dynamically
-let topics = ["ian mckellen", "elijah wood", "viggo mortensen", "orlando bloom", "sean astin", "dominic monaghan", "billy boyd", "john rhys-davies", "cate blanchett", "liv tyler"];
+let topics = ["daniel radcliffe", "elijah wood", "sarah jessice parker", "martin freeman", "sean bean", "evangeline lily", "brian cranston", "katherine hiegl", "kate winslet", "patrick stewart"];
 //Function that dynamically creates the starting buttons based on the array above.
 function actorButtons() {
 	//Removes existing buttons so they are not repeated each time function is called
@@ -37,7 +37,7 @@ $(document.body).on("click", ".actor", function () {
 		//For loop that runs through each JSON it receives
 		for (let i = 0; i < results.length; i++) {
 			//Creates a div and assigns it to gifDiv
-			let gifDiv = $("<div>");
+			let gifDiv = $("<div>").attr("id", "gifsDiv");
 			//Retrieves the rating value from the JSON and assigns it to rating variable
 			let rating = results[i].rating;
 			let title = results[i].title;
@@ -52,10 +52,13 @@ $(document.body).on("click", ".actor", function () {
 			actorImage.attr("data-animate", results[i].images.fixed_height.url);
 			actorImage.attr("data-state", "still");
 			actorImage.attr("class", "gif");
-			//Appends each gif rating and image to the gifDiv
+      //Appends each gif rating and image to the gifDiv
+      //Adding the favorite button to each img
+      let favButton = $("<button>").text("Add as favorite?");
 			gifDiv.append(p1);
 			gifDiv.append(p2);
-			gifDiv.append(actorImage);
+      gifDiv.append(actorImage);
+      gifDiv.append(favButton);
 			//Prepends the gifDiv onto the page, each response above the last
 			$("#gifs").prepend(gifDiv);
 		}
@@ -70,7 +73,8 @@ $("#add-actor").on("click", function(event) {
 	//Pushes the new actor into the topics array
 	topics.push(newActor);
 	//Calls actorButtons function to update new button and so exisiting buttons are not added again
-	actorButtons();
+  actorButtons();
+  $("#actor-input").val("");
 });
 //on-click event that lets user play and pause gif at will
 $(document.body).on("click", ".gif", function() {
@@ -90,3 +94,4 @@ $(document.body).on("click", ".gif", function() {
 		$(this).attr("data-state", "still");
 	}
 });
+//On-click event that adds gifs to favorites div
