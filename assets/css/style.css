@@ -3,7 +3,7 @@
     margin: 10px auto;
     padding: 10px;
     text-align: center;
-    background-color: burlywood;
+    width: 95%;
 }
 button {
     margin: 5px;
@@ -15,7 +15,7 @@ img {
     text-align: right;
 }
 #favorites {
-    position: absolute;
+    position: fixed;
     right: 10px;
 }
 h1, h2, h3, h4 {

@@ -23,7 +23,7 @@ $(document.body).on("click", ".actor", function () {
 	//Assigning actor variable to the data-name attribute of each button
 	let actor = $(this).attr("data-name");
 	//queryURL used for ajax request
-	let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + actor + "&api_key=FTViY2V2MIS19Yl7mzS6P9Y7QUXhJWw0&limit=10";
+	let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + actor + "&api_key=FTViY2V2MIS19Yl7mzS6P9Y7QUXhJWw0&limit=5";
 	//Ajax request
 	$.ajax({
 		url: queryURL,
@@ -55,14 +55,23 @@ $(document.body).on("click", ".actor", function () {
       //Appends each gif rating and image to the gifDiv
       //Adding the favorite button to each img
       let favButton = $("<button>").text("Add as favorite?");
+      favButton.attr("id", "favButton");
 			gifDiv.append(p1);
 			gifDiv.append(p2);
       gifDiv.append(actorImage);
       gifDiv.append(favButton);
 			//Prepends the gifDiv onto the page, each response above the last
-			$("#gifs").prepend(gifDiv);
+      $("#gifs").prepend(gifDiv);
 		}
+		//On-click event that adds gifs to favorites div
+		$(document.body).on("click", "#favButton", function() {
+  		$("#favorites").append(actorImage);
+		});
 	})
+});
+//On-click event that adds gifs to favorites div
+$(document.body).on("click", "#favButton", function() {
+  $("#favorites").append($(this));
 });
 //Function that adds a new actor after user types name and hits submit
 $("#add-actor").on("click", function(event) {
@@ -80,7 +89,6 @@ $("#add-actor").on("click", function(event) {
 $(document.body).on("click", ".gif", function() {
 	//Assigns state variable to the value of data-state attribute
 	let state = $(this).attr("data-state");
-	console.log(state);
 	//If statement that determines if gif is in still state
 	if (state === "still") {
 		//Changes the source of each image tag from still to animated
@@ -94,4 +102,3 @@ $(document.body).on("click", ".gif", function() {
 		$(this).attr("data-state", "still");
 	}
 });
-//On-click event that adds gifs to favorites div
