@@ -23,7 +23,7 @@ $(document.body).on("click", ".actor", function () {
 	//Assigning actor variable to the data-name attribute of each button
 	let actor = $(this).attr("data-name");
 	//queryURL used for ajax request
-	let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + actor + "&api_key=FTViY2V2MIS19Yl7mzS6P9Y7QUXhJWw0&limit=5";
+	let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + actor + "&api_key=FTViY2V2MIS19Yl7mzS6P9Y7QUXhJWw0&limit=10";
 	//Ajax request
 	$.ajax({
 		url: queryURL,
@@ -65,7 +65,7 @@ $(document.body).on("click", ".actor", function () {
 		}
 		//On-click event that adds gifs to favorites div
 		$(document.body).on("click", "#favButton", function() {
-  		$("#favorites").append(actorImage);
+  		$("#favorites").append($(this).gifDiv);
 		});
 	})
 });

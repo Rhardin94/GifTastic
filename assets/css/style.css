@@ -23,6 +23,9 @@ button :hover {
     background-color: darkred;
     color:goldenrod;
 }
+#buttons {
+    border-bottom: 5px solid gold;
+}
 img {
     margin: auto;
     width: inherit;
