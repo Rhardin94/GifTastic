@@ -4,7 +4,7 @@ let topics = ["daniel radcliffe", "elijah wood", "sarah jessice parker", "martin
 function actorButtons() {
 	//Removes existing buttons so they are not repeated each time function is called
 	$("#buttons").empty();
-	$("#buttons").html("<h1> Welcome to the Actor's Hangout! If you think actors are cool, you're in the right place! </h1>");
+	$("#buttons").html("<h1> Welcome the Actors onto the Red Carpet!</h1>");
 	//For loop that runs the length of topics array
 	for (let i = 0; i < topics.length; i++) {
 		//Creates new buttons and assigns them to aBtn variable
@@ -12,7 +12,7 @@ function actorButtons() {
 		//Sets the attribute "data-name" to current string of topics array
 		aBtn.attr("data-name", topics[i]);
 		//Sets the text of each button to the currect string of topics array
-		aBtn.text("I think " + topics[i] + " is cool!");
+		aBtn.text("Welcome, " + topics[i] + " Who are you wearing?");
 		//Appends each button to the buttons div
 		$("#buttons").append(aBtn);
 	}
@@ -59,7 +59,7 @@ $(document.body).on("click", ".actor", function () {
 			gifDiv.append(p1);
 			gifDiv.append(p2);
       gifDiv.append(actorImage);
-      gifDiv.append(favButton);
+      gifDiv.prepend(favButton);
 			//Prepends the gifDiv onto the page, each response above the last
       $("#gifs").prepend(gifDiv);
 		}
@@ -79,11 +79,16 @@ $("#add-actor").on("click", function(event) {
 	event.preventDefault();
 	//Captures the new actor value that user typed into box
 	let newActor = $("#actor-input").val();
+	//Prevent button from added empty buttons
+	if (($("#actor-input").val() === ""))  {
+		return false;
+	} else {
 	//Pushes the new actor into the topics array
 	topics.push(newActor);
 	//Calls actorButtons function to update new button and so exisiting buttons are not added again
   actorButtons();
-  $("#actor-input").val("");
+	$("#actor-input").val("");
+	}
 });
 //on-click event that lets user play and pause gif at will
 $(document.body).on("click", ".gif", function() {

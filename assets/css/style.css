@@ -4,12 +4,24 @@
     padding: 10px;
     text-align: center;
     width: 95%;
+    background-color: darkred;
+    border: 5px solid gold;
+    color: gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 button {
     margin: 5px;
+    background-color: goldenrod;
+    color: darkred;
+    padding: 5px;
+}
+button :hover {
+    background-color: darkred;
+    color:goldenrod;
 }
 img {
     margin: auto;
+    width: inherit;
 }
 #form {
     text-align: right;
@@ -23,5 +35,5 @@ h1, h2, h3, h4 {
 }
 #gifsDiv {
     width: 400px;
-    float: left;
+    display: inline-block;
 }
