@@ -65,7 +65,7 @@ $(document.body).on("click", ".actor", function () {
 		}
 		//On-click event that adds gifs to favorites div
 		$(document.body).on("click", "#favButton", function() {
-  		$("#favorites").append($(this).gifDiv);
+  		$("#favorites").prepend(gifDiv);
 		});
 	})
 });
