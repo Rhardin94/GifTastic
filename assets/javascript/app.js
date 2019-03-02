@@ -12,7 +12,7 @@ function actorButtons() {
 		//Sets the attribute "data-name" to current string of topics array
 		aBtn.attr("data-name", topics[i]);
 		//Sets the text of each button to the currect string of topics array
-		aBtn.text("Welcome, " + topics[i] + " Who are you wearing?");
+		aBtn.text("Welcome, " + topics[i] + "! Who are you wearing?");
 		//Appends each button to the buttons div
 		$("#buttons").append(aBtn);
 	}

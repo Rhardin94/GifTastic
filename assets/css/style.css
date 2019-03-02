@@ -1,3 +1,6 @@
+body {
+    background-image: url("https://slm-assets1.secondlife.com/assets/16809496/original/gif_Decent_Starry_Night_Sky_4x4.gif?1491222283");
+}
 #container {
     position: relative;
     margin: 10px auto;
@@ -14,6 +17,7 @@ button {
     background-color: goldenrod;
     color: darkred;
     padding: 5px;
+    border: 5px solid darkred;
 }
 button :hover {
     background-color: darkred;
@@ -36,4 +40,7 @@ h1, h2, h3, h4 {
 #gifsDiv {
     width: 400px;
     display: inline-block;
+}
+p {
+    margin: 5px;
 }
