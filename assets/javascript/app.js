@@ -19,7 +19,7 @@ function actorButtons() {
 };
 actorButtons();
 //On-click event that fires the ajax request
-$(".actor").on("click", function () {
+$(document.body).on("click", ".actor", function () {
 	//Assigning actor variable to the data-name attribute of each button
 	let actor = $(this).attr("data-name");
 	//queryURL used for ajax request
@@ -73,7 +73,7 @@ $("#add-actor").on("click", function(event) {
 	actorButtons();
 });
 //on-click event that lets user play and pause gif at will
-$(".gif").on("click", function() {
+$(document.body).on("click", ".gif", function() {
 	//Assigns state variable to the value of data-state attribute
 	let state = $(this).attr("data-state");
 	console.log(state);
