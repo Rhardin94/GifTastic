@@ -61,12 +61,12 @@ $(document.body).on("click", ".actor", function () {
       gifDiv.append(actorImage);
       gifDiv.prepend(favButton);
 			//Prepends the gifDiv onto the page, each response above the last
-      $("#gifs").prepend(gifDiv);
-		}
-		//On-click event that adds gifs to favorites div
+			$("#gifs").prepend(gifDiv);
+			//On-click event that adds gifs to favorites div
 		$(document.body).on("click", "#favButton", function() {
-  		$("#favorites").prepend(gifDiv);
+  		$("#favorites").prepend($(this).gifDiv);
 		});
+		}
 	})
 });
 //On-click event that adds gifs to favorites div
