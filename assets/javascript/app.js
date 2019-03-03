@@ -1,5 +1,5 @@
 //Array of actors to create the starter buttons dynamically
-let topics = ["daniel radcliffe", "elijah wood", "sarah jessice parker", "martin freeman", "sean bean", "evangeline lily", "brian cranston", "katherine hiegl", "kate winslet", "patrick stewart"];
+let topics = ["daniel radcliffe", "elijah wood", "sarah jessica parker", "martin freeman", "sean bean", "evangeline lily", "brian cranston", "jenna fischer", "kate winslet", "patrick stewart"];
 //Function that dynamically creates the starting buttons based on the array above.
 function actorButtons() {
 	//Removes existing buttons so they are not repeated each time function is called
@@ -63,9 +63,11 @@ $(document.body).on("click", ".actor", function () {
 			//Prepends the gifDiv onto the page, each response above the last
 			$("#gifs").prepend(gifDiv);
 			//On-click event that adds gifs to favorites div
-		$(document.body).on("click", "#favButton", function() {
-  		$("#favorites").prepend($(this).gifDiv);
-		});
+			$(document.body).on("click", "#favButton", function() {
+  			$("#favorites").prepend($(this).gifDiv);
+			}),/*Displays if request fails*/ function(errorMessage) {
+				$(gifDiv).text("The request failed:" + errorMessage.code);
+			}
 		}
 	})
 });
