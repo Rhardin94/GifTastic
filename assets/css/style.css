@@ -61,7 +61,7 @@ h1 {
   font-size: x-large;
 }
 
-#gifsDiv {
+.gifsDiv {
   width: 400px;
   margin: 10px;
   display: inline-block;
