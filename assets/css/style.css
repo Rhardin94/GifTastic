@@ -1,58 +1,72 @@
 body {
-    background-image: url("https://slm-assets1.secondlife.com/assets/16809496/original/gif_Decent_Starry_Night_Sky_4x4.gif?1491222283");
+  background-image: url("https://slm-assets1.secondlife.com/assets/16809496/original/gif_Decent_Starry_Night_Sky_4x4.gif?1491222283");
 }
+
 #container {
-    position: relative;
-    margin: 10px auto;
-    padding: 10px;
-    text-align: center;
-    width: 95%;
-    background-color: darkred;
-    border: 5px solid gold;
-    color: gold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  margin: 10px auto;
+  padding: 10px;
+  text-align: center;
+  width: 95%;
+  background-color: darkred;
+  border: 5px solid gold;
+  color: gold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 button {
-    margin: 5px;
-    background-color: goldenrod;
-    color: lightgoldenrodyellow;
-    padding: 5px;
-    border: 5px solid lightgoldenrodyellow;
-    font-weight: bold;
-    font-size: medium;
-    /*New styling tricked learned here "https://css-tricks.com/animating-border/"*/
-    transition: background-color 0.6s linear;
+  margin: 5px;
+  background-color: goldenrod;
+  color: lightgoldenrodyellow;
+  padding: 5px;
+  border: 5px solid lightgoldenrodyellow;
+  font-weight: bold;
+  font-size: medium;
+  /*New styling tricked learned here "https://css-tricks.com/animating-border/"*/
+  transition: background-color 0.6s linear;
 }
+
 button:hover {
-    background-color: darkred;
-    color:goldenrod;
+  background-color: darkred;
+  color: goldenrod;
 }
+
 #buttons {
-    border-bottom: 5px solid gold;
+  border-bottom: 5px solid gold;
 }
+
 img {
-    margin: auto;
-    width: inherit;
+  margin: auto;
+  width: inherit;
 }
+
 #form {
-    text-align: right;
-    margin: 5px;
+  text-align: right;
+  margin: 5px;
 }
+
 #favorites {
-    position: fixed;
-    right: 20px;
+  text-align: left;
+  border-bottom: 5px solid gold;
 }
-h1, h2, h3, h4 {
-    font-weight: bold;
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
 }
+
 h1 {
-    font-size: x-large;
+  font-size: x-large;
 }
+
 #gifsDiv {
-    width: 400px;
-    margin: 10px;
-    display: inline-block;
+  width: 400px;
+  margin: 10px;
+  display: inline-block;
 }
+
 p {
-    margin: 5px;
+  margin: 5px;
 }
