@@ -43,11 +43,13 @@ img {
 #form {
   text-align: right;
   margin: 5px;
+  padding: 5px;
 }
 
 #favorites {
   text-align: left;
   border-bottom: 5px solid gold;
+  padding: 5px;
 }
 
 h1,
