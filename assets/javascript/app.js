@@ -106,5 +106,15 @@ $(document.body).on("click", ".gif", function () {
 $(document.body).on("click", ".favButton", function () {
   $("#favorites").append($(this).parent());
   $(this).hide();
+  if ($(this)) {
+  let clearFav = $("<button>").text("Clear Favorite?");
+  clearFav.attr("class", "clearFav");
+  $(this).parent().append(clearFav);
+  }
+});
+//On-click event that removes gifs from favorites div
+$(document.body).on("click", ".clearFav", function() {
+  $(this).parent().remove();
+  $(this).hide();
 });
 });
