@@ -57,6 +57,7 @@ $(document.body).on("click", ".actor", function () {
         //Adding the favorite button to each img
         let favButton = $("<button>").text("Add as favorite?");
         favButton.attr("class", "favButton");
+        gifDiv.attr("favNumber", i);
         gifDiv.append(actorImage);
         gifDiv.append(pTitle);
         gifDiv.append(pRating);
@@ -104,17 +105,34 @@ $(document.body).on("click", ".gif", function () {
 });
 //On-click event that adds gifs to favorites div
 $(document.body).on("click", ".favButton", function () {
-  $("#favorites").append($(this).parent());
+  favList.push($(this).parent());
   $(this).hide();
-  if ($(this)) {
-  let clearFav = $("<button>").text("Clear Favorite?");
-  clearFav.attr("class", "clearFav");
-  $(this).parent().append(clearFav);
-  }
+  renderFavs(favList);
+  localStorage.setItem("favList", JSON.stringify(favList));
 });
 //On-click event that removes gifs from favorites div
 $(document.body).on("click", ".clearFav", function() {
-  $(this).parent().remove();
   $(this).hide();
+  let favNumber = $(this).parent().attr("favNumber");
+  favList.splice(favNumber, 1);
+  renderFavs(favList);
+  localStorage.setItem("favList", JSON.stringify(favList));
 });
+//Function that appends the favorites to the page
+function renderFavs(favList) {
+  $("#favorites").empty();
+  for (let j = 0; j < favList.length; j++) {
+    let favItem = $("<div>").html(favList[j]);
+    let clearFav = $("<button>").text("Clear Favorite?");
+    clearFav.attr("class", "clearFav");
+    favItem.prepend(clearFav);
+    $("#favorites").append(favItem);
+  }
+};
+//Array to put favorites into
+let favList = JSON.parse(localStorage.getItem("favList"));
+if (!Array.isArray(favList)) {
+  favList = [];
+};
+renderFavs(favList);
 });
