@@ -48,20 +48,24 @@ $(document.body).on("click", ".actor", function () {
         //Assigns a newly made image tag with a src contained inside retrieved JSON
         //gif returns immediately in still state for user manipulation in a later function
         let actorImage = $("<img>").attr("src", results[i].images.fixed_height_still.url);
-        //Adding attributes to each img for manipulation later.
-        actorImage.attr("data-still", results[i].images.fixed_height_still.url);
-        actorImage.attr("data-animate", results[i].images.fixed_height.url);
-        actorImage.attr("data-state", "still");
-        actorImage.attr("class", "gif");
-        //Appends each gif rating and image to the gifDiv
+          //Adding attributes to each img for manipulation later.
+          actorImage.attr("data-still", results[i].images.fixed_height_still.url);
+          actorImage.attr("data-animate", results[i].images.fixed_height.url);
+          actorImage.attr("data-state", "still");
+          actorImage.attr("class", "gif");
         //Adding the favorite button to each img
         let favButton = $("<button>").text("Add as favorite?");
-        favButton.attr("class", "favButton");
+          favButton.attr("class", "favButton");
+        //Adding clear favorite button that is hidden for later
+        let clearFav = $("<button>").text("Clear Favorite?");
+          clearFav.attr("class", "clearFav");
         gifDiv.attr("favNumber", i);
         gifDiv.append(actorImage);
         gifDiv.append(pTitle);
         gifDiv.append(pRating);
         gifDiv.append(favButton);
+        gifDiv.append(clearFav);
+        clearFav.hide();
         //Prepends the gifDiv onto the page, each response above the last
         $("#gifs").prepend(gifDiv);
       }
@@ -107,6 +111,7 @@ $(document.body).on("click", ".gif", function () {
 $(document.body).on("click", ".favButton", function () {
   favList.push($(this).parent());
   $(this).hide();
+  $(this).siblings().show();
   renderFavs(favList);
   localStorage.setItem("favList", JSON.stringify(favList));
 });
@@ -114,7 +119,7 @@ $(document.body).on("click", ".favButton", function () {
 $(document.body).on("click", ".clearFav", function() {
   $(this).hide();
   let favNumber = $(this).parent().attr("favNumber");
-  favList.splice(favNumber, 1);
+  favList.splice($(this).parent().favNumber, 1);
   renderFavs(favList);
   localStorage.setItem("favList", JSON.stringify(favList));
 });
@@ -122,10 +127,7 @@ $(document.body).on("click", ".clearFav", function() {
 function renderFavs(favList) {
   $("#favorites").empty();
   for (let j = 0; j < favList.length; j++) {
-    let favItem = $("<div>").html(favList[j]);
-    let clearFav = $("<button>").text("Clear Favorite?");
-    clearFav.attr("class", "clearFav");
-    favItem.prepend(clearFav);
+    let favItem = favList[j];
     $("#favorites").append(favItem);
   }
 };
@@ -134,5 +136,6 @@ let favList = JSON.parse(localStorage.getItem("favList"));
 if (!Array.isArray(favList)) {
   favList = [];
 };
+//Calls rendor favorites function to display favorites still in storage
 renderFavs(favList);
 });
