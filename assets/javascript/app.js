@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //Adding this because the page errors out and does not recognize document if favList array has items in it
-  localStorage.clear();
+  /*localStorage.clear();*/
 //Array of actors to create the starter buttons dynamically
 let topics = ["daniel radcliffe", "elijah wood", "sarah jessica parker", "martin freeman", "sean bean", "evangeline lily", "brian cranston", "jenna fischer", "kate winslet", "patrick stewart"];
 //Function that dynamically creates the starting buttons based on the array above.
@@ -113,6 +113,7 @@ $(document.body).on("click", ".gif", function () {
 $(document.body).on("click", ".favButton", function () {
   favList.push($(this).parent());
   $(this).hide();
+  //Making hidden item appear or .siblings found here "https://api.jquery.com/siblings/"
   $(this).siblings().show();
   renderFavs(favList);
   localStorage.setItem("favList", JSON.stringify(favList));
