@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  //Adding this because the page errors out and does not recognize document if favList array has items in it
+  localStorage.clear();
 //Array of actors to create the starter buttons dynamically
 let topics = ["daniel radcliffe", "elijah wood", "sarah jessica parker", "martin freeman", "sean bean", "evangeline lily", "brian cranston", "jenna fischer", "kate winslet", "patrick stewart"];
 //Function that dynamically creates the starting buttons based on the array above.
@@ -117,15 +119,15 @@ $(document.body).on("click", ".favButton", function () {
 });
 //On-click event that removes gifs from favorites div
 $(document.body).on("click", ".clearFav", function() {
-  $(this).hide();
   let favNumber = $(this).parent().attr("favNumber");
-  favList.splice($(this).parent().favNumber, 1);
+  favList.splice($(this).favNumber, 1);
   renderFavs(favList);
   localStorage.setItem("favList", JSON.stringify(favList));
 });
 //Function that appends the favorites to the page
 function renderFavs(favList) {
   $("#favorites").empty();
+  $("#favorites").html("<h2> Favorites: </h2>");
   for (let j = 0; j < favList.length; j++) {
     let favItem = favList[j];
     $("#favorites").append(favItem);
