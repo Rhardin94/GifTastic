@@ -34,7 +34,7 @@ $(document.body).on("click", ".actor", function () {
     //Promise that runs this next function once it retrieves a response
   }).then(function (response) {
     //Logs the response to ensure request is working
-    console.log(response)
+    console.log(response.data);
     //Assigns each response JSON to the results variable
     let results = response.data;
     //For loop that runs through each JSON it receives
