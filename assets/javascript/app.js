@@ -120,24 +120,25 @@ $(document.body).on("click", ".favButton", function () {
 });
 //On-click event that removes gifs from favorites div
 $(document.body).on("click", ".clearFav", function() {
-  let favNumber = $(this).parent().attr("favNumber");
   favList.splice($(this).favNumber, 1);
   renderFavs(favList);
   localStorage.setItem("favList", JSON.stringify(favList));
 });
+//Array to put favorites into
+let favList = JSON.parse(localStorage.getItem("favList"));
+if (!Array.isArray(favList)) {
+  favList = [];
+};
 //Function that appends the favorites to the page
+//Works until page is refreshed, did not have enough time to create another object from this array and then push that to localStorage
+//From my understanding, it would work if I had less data in each gif or broke down the process of pushing each gifDiv too favList(and localStorage)
 function renderFavs(favList) {
-  $("#favorites").empty();
   $("#favorites").html("<h2> Favorites: </h2>");
   for (let j = 0; j < favList.length; j++) {
     let favItem = favList[j];
     $("#favorites").append(favItem);
   }
-};
-//Array to put favorites into
-let favList = JSON.parse(localStorage.getItem("favList"));
-if (!Array.isArray(favList)) {
-  favList = [];
+  console.log(favList);
 };
 //Calls rendor favorites function to display favorites still in storage
 renderFavs(favList);
