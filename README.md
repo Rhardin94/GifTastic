@@ -1,5 +1,6 @@
 # GifTastic
-## Giftastic is an ajax-request-based project that uses the giphy api to retrieve data. 
+## Link to project here: "https://rhardin94.github.io/GifTastic/"
+### Giftastic is an ajax-request-based project that uses the giphy api to retrieve data. 
 * The user submits the request by clicking on one of several dynamically created buttons at the top of the page that retrieves and appends 10 static gifs to the page, upon each button click, 10 more gifs are returned and prepended above the previous gifs. 
 * The user may also add a button to the top of the page to search for a specific desired response that then appends dynamically to the page. 
     * Upon retrieval of the gifs, the user may click on each gif, once to change to the animated state, and click again to return to its static state. 
