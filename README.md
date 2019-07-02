@@ -1,7 +1,44 @@
 # GifTastic
-## Giftastic is an ajax-request-based project that uses the giphy api to retrieve data. 
-* The user submits the request by clicking on one of several dynamically created buttons at the top of the page that retrieves and appends 10 static gifs to the page, upon each button click, 10 more gifs are returned and prepended above the previous gifs. 
-* The user may also add a button to the top of the page to search for a specific desired response that then appends dynamically to the page. 
-    * Upon retrieval of the gifs, the user may click on each gif, once to change to the animated state, and click again to return to its static state. 
-    * Each gif can also be added to the favorites section that appears at the top of the page once populated with multiple gifs. (The gifs are stored in local storage and are supposed to remain in the favorites section until cleared, even when page is refreshed)
-    * The user can clear their favorites section by clicking on the clear button underneath each given contained there.
+### Deployed site found here: https://rhardin94.github.io/GifTastic/
+## Overview
+Giftastic is a single-page app dynamically poplated with gifs from the Giphy API via jQuery. The user is presented with several buttons containing the names of famous actors. When the user clicks a button, giphy returns ten gifs using the actor's name as a search parameter, and populates them on the page. The user may also add an actor via the add actor input field if they wish to return gifs not already available. If the user wishes to save a gif for future viewing, the may add any gif to the favorites section.
+## How to use
+
+When first loading up the site, the user is presented with the home page without any gifs present.
+
+![home page](/assets/screenshots/home.jpg)
+
+To populate the site with gifs, the user must click one of the buttons at the top of the page.
+
+![actor buttons](/assets/screeshots/buttons.jpg)
+
+If the user wants to add an actor button to the list they may do so with the input field and add button
+
+![add actor form](/assets/screenshots/add.jpg)
+
+After clicking the add actor button, the new actor button is added.
+
+![new actor button](/assets/screenshots/new.jpg)
+
+Once the user has clicked on a button, the page with populate with gifs.
+
+![gifs](/assets/screenshots/gifs.jpg)
+
+Each gif is intially rendered in its static state, but the user may click on the gif to alternate between static and animated.
+
+![animated gif](/assets/screenshots/animated.jpg)
+
+If the user wishes to save a gif to their favorites section they may click the 'Add Favorite' button.
+
+![add favorite button](/assets/screenshots/save.jpg)
+
+Then the gif will be added to the favorites section.
+
+![favorites section with gif added](/assets/screenshots/favorite.jpg)
+
+The user may also clear gifs from their favorite section to start fresh with the 'Clear Favorite' Button
+
+![clear favorite button](/assets/screenshots/clear.jpg)
+
+## Tech
+* [jQuery](https://jquery.com/)
