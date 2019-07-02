@@ -10,17 +10,17 @@ When first loading up the site, the user is presented with the home page without
 
 To populate the site with gifs, the user must click one of the buttons at the top of the page.
 
-![actor buttons](/assets/screeshots/buttons.jpg)
+![actor buttons](/assets/screenshots/buttons.jpg)
 
-If the user wants to add an actor button to the list they may do so with the input field and add button
+If the user wants to add an actor button to the list they may do so with the add actor form.
 
 ![add actor form](/assets/screenshots/add.jpg)
 
-After clicking the add actor button, the new actor button is added.
+After clicking the add actor button, the new actor is added to the existing actor buttons.
 
 ![new actor button](/assets/screenshots/new.jpg)
 
-Once the user has clicked on a button, the page with populate with gifs.
+Once the user has clicked on an existing actor's button, the page will populate with gifs.
 
 ![gifs](/assets/screenshots/gifs.jpg)
 
@@ -36,7 +36,7 @@ Then the gif will be added to the favorites section.
 
 ![favorites section with gif added](/assets/screenshots/favorite.jpg)
 
-The user may also clear gifs from their favorite section to start fresh with the 'Clear Favorite' Button
+The user may also clear gifs from their favorite section to start fresh with the 'Clear Favorite' Button.
 
 ![clear favorite button](/assets/screenshots/clear.jpg)
 
